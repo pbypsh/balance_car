@@ -18,7 +18,7 @@ static const float rw = 0.032; // 平衡车轮胎半径,单位是m
 //
 // @简介：负责初始化平衡车控制系统
 //
-void App_Control_Init(void)
+void App_Control_Init(void) 
 {
     PID_Init(&pid_velocity, 10.0f, 10.0f, 0.0f); // 初始化速度环PID
     PID_LimitConfig(&pid_velocity, +0.5 * g, -0.5 * g); // 将速度环PID的输出范围限制在+-0.5g 之间

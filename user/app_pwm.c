@@ -1,6 +1,6 @@
 #include "app_pwm.h"
 
-static void STBY_Pin_Init(void);
+static void STBY_Pin_Init(void); 
 static void Motor_L_Init(void); //左电机初始化
 static void Motor_R_Init(void); //右电机初始化
 

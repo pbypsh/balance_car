@@ -8,6 +8,9 @@
 #include "mpu6050_test.h"
 #include "app_encoder.h"
 #include "app_motor.h"
+#include "delay.h"
+#include "app_mpu6050.h"
+#include "app_control.h"
 
 int main(void)	
 {
@@ -26,12 +29,16 @@ int main(void)
 	App_PWM_Init(); //PWM，用于控制电机的转速，TB6612FNG，双H桥
 	App_Bat_Init(); //电池电压监控
 	App_Motor_Init(); //电机调速系统(PID控制)
+	App_MPU6050_Init(); //MPU6050，用于测量平衡车的倾斜角度和角速度
+	App_Control_Init(); //平衡车控制系统
 
 	while(1)
 	{
 		App_Button_Proc();
 		App_Bat_Proc();
 		App_Motor_Proc();
+		App_MPU6050_Proc();
+		App_Control_Proc();
 	}
 }
 
